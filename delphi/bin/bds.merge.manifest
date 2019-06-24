@@ -1,0 +1,16 @@
+<file name="bordbk110.dll">
+<comClass clsid="{660036f2-92dc-11d7-82f9-005056c00001}"/>
+<comClass clsid="{65fe8cc6-92dc-11d7-88e2-005056c00001}"/>
+<comClass clsid="{65ff76a4-92dc-11d7-996c-005056c00001}"/>
+</file>
+<dependency>                              
+  <dependentAssembly>                   
+    <assemblyIdentity                 
+      type="win32"                
+      name="Microsoft.Windows.Common-Controls" 
+      version="6.0.0.0"           
+      publicKeyToken="6595b64144ccf1df" 
+      language="*"                
+      processorArchitecture="*"   />                                     
+  </dependentAssembly>                  
+</dependency>

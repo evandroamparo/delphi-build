@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+   <assembly>applet</assembly>
+   <members>
+      <member name="T:CtlPanel.EAppletException">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               
+               <class namespace="ctlpanel">EAppletException</class> is the exception class for errors that occur in a Control Panel Application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               
+               <class namespace="ctlpanel">EAppletException</class> is the exception for errors specific to applications created by the control panel wizard.</para>
+         </comments>
+      </member>
+      <member name="T:CtlPanel.TAppletModule">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               
+               <class namespace="CtlPanel">TAppletModule</class> represents a single Control Panel Applet in a control panel applet application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               
+               <class namespace="CtlPanel">TAppletModule</class> encapsulates the functionality of a Control Panel Applet. Its properties specify how the icon for the applet appears in the control panel, including the help that appears when users press F1. The events of <class namespace="CtlPanel">TAppletModule</class> let you specify what the applet does when users start or stop it, either by double-clicking in the control panel or by launching the applet programmatically.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.Create">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Instantiates a <method namespace="CtlPanel" class="TAppletModule">TAppletModule</method> object.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <method namespace="CtlPanel" class="TAppletModule">Create</method> constructs a <method namespace="CtlPanel" class="TAppletModule">TAppletModule</method> instance and adds itself to the list of <property namespace="ctlpanel" class="tappletapplication">Modules</property> in the <class namespace="ctlpanel">TAppletApplication</class> specified as the value of AOwner.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.Destroy">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Disposes of an instance of a <method namespace="CtlPanel" class="TAppletModule">TAppletModule</method> object.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The destructor destroys the specified instance of a <method namespace="CtlPanel" class="TAppletModule">TAppletModule</method> and removes it from the list of applet modules in the owning <class namespace="ctlpanel">TAppletApplication</class>.</para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Typically, applications do not call <method namespace="CtlPanel" class="TAppletModule">Destroy</method>, because the owning <class namespace="ctlpanel">TAppletApplication</class> is responsible for freeing them. However, if an Owner is not specified, do not call <method namespace="CtlPanel" class="TAppletModule">Destroy</method> directly. Rather, call the Free method.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.Data">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Specifies user-defined data.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">Data</property> is a user-defined value that is passed to the controlling application on the <event namespace="ctlpanel" class="tappletmodule">OnInquire</event>/OnNewInquire events.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.Caption">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the caption of the applet module.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">Caption</property> is the string that shows in the Control Panel under the icon of the Applet.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.AppletIcon">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the icon for the AppletModule.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">AppletIcon</property> contains the icon that is associated with this Applet Module.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.Help">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates a help string that appears in the control panel for this applet.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">Help</property> is the string that is visible in the status bar of the Control Panel when a particular Applet is selected.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.ResidIcon">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the resource ID of the icon associated with the applet module.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">ResidIcon</property> is the resource ID of the icon associated with the applet module. This property is mutually exclusive with the <property namespace="ctlpanel" class="tappletmodule">AppletIcon</property> property.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.ResidName">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the resource ID of the caption string.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">ResidName</property> is the resource ID of the caption string associated with the applet module. This property is mutually exclusive with the <property namespace="ctlpanel" class="tappletmodule">Caption</property> property.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.ResidInfo">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the resource ID of the help string.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletModule">ResidInfo</property> is the resource ID of the help string associated with the applet module. This property is mutually exclusive with the <property namespace="ctlpanel" class="tappletmodule">Help</property> property.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnStop">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the AppletModule receives a request to shutdown.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Write an <event namespace="CtlPanel" class="TAppletModule">OnStop</event> event handler to perform Applet-specific clean-up. <event namespace="CtlPanel" class="TAppletModule">OnStop</event> occurs when the applet module receives a request to shutdown.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnActivate">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the applet's icon is double clicked.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <event namespace="CtlPanel" class="TAppletModule">OnActivate</event> is invoked when the Applet icon is double clicked in the Control Panel.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnInquire">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the AppletModule is queried for its information.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <event namespace="CtlPanel" class="TAppletModule">OnInquire</event> occurs when the controlling application requests each applet's information such as its icon, caption, <property namespace="ctlpanel" class="tappletmodule">Help</property> and <property namespace="ctlpanel" class="tappletmodule">Data</property> values. This event populates a structure with the resource ID's which are changed in this event (such as idIcon, idName, idInfo and lData). These values default to the corresponding module properties.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnNewInquire">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the AppletModule is queried for its information.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <event namespace="CtlPanel" class="TAppletModule">OnNewInquire</event> occurs when the controlling application requests each applet's information such as its Icon, <property namespace="ctlpanel" class="tappletmodule">Caption</property>, <property namespace="ctlpanel" class="tappletmodule">Help</property>, and <property namespace="ctlpanel" class="tappletmodule">Data</property> Values. This event populates a structure with the values that are changed in this event (such as hIcon, AppletName, AppletInfo, and lData). HIcon defaults to the handle of the <property namespace="ctlpanel" class="tappletmodule">AppletIcon</property> property. AppletName defaults to <property namespace="ctlpanel" class="tappletmodule">Caption</property>, AppletInfo defaults to <property namespace="ctlpanel" class="tappletmodule">Help</property>, and lData defaults to the <property namespace="ctlpanel" class="tappletmodule">Data</property> property of the AppletModule.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnStartWParms">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the AppletModule is invoked from RunDLL.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <event namespace="CtlPanel" class="TAppletModule">OnStartWParms</event> parallels the <event namespace="ctlpanel" class="tappletmodule">OnActivate</event> event. Where it differs is that the invocation is coming from RunDLL. Params may contain extra directions for execution.</para>
+         </comments>
+      </member>
+      <member name="T:CtlPanel.TAppletApplication">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               
+               <class namespace="CtlPanel">TAppletApplication</class> represents a Windows control panel application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               
+               <class namespace="CtlPanel">TAppletApplication</class> represents an application that implements one or more applets, each of which appear in the Windows control panel. Each applet that the application implements is built using an AppletModule, which is a special data module that holds the nonvisual components in the applet and which responds when users execute the applet from the control panel. <class namespace="CtlPanel">TAppletApplication</class> contains a set of AppletModules. It lets you respond to a number of events that are called by the Windows control panel for starting up or shutting down the application.</para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">A global Application variable of type <class namespace="CtlPanel">TAppletApplication</class> is declared in the CtlPanel unit. </para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.Create">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Instantiates a <method namespace="CtlPanel" class="TAppletApplication">TAppletApplication</method> object.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Applications do not need to call the constructor directly. <method namespace="CtlPanel" class="TAppletApplication">TAppletApplication</method> is instantiated by selecting File | New | Other from the menu of the IDE main window and selecting Applet Application in the New Items dialog. An Application variable of type <method namespace="CtlPanel" class="TAppletApplication">TAppletApplication</method> is declared and initialized as the instance of the application.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.CreateForm">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Creates the Applet object or objects for the applet application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Do not call <method namespace="CtlPanel" class="TAppletApplication">CreateForm</method> in an application.The module manager calls <method namespace="CtlPanel" class="TAppletApplication">CreateForm</method> internally to register the applet objects with the applet application. </para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <method namespace="CtlPanel" class="TAppletApplication">CreateForm</method> instantiates a TApplet object for each applet contained in the applet application. <method namespace="CtlPanel" class="TAppletApplication">CreateForm</method> is called automatically, for the first applet module, when the applet application is first created. Subsequently, <method namespace="CtlPanel" class="TAppletApplication">CreateForm</method> is called for each new applet module added to the application. To add a new applet module, select File | New | Other from the menu of the IDE main window and choose Applet Module in the New Items dialog.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.HandleException">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Responds to exceptions that are not caught by a try block in the application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <method namespace="CtlPanel" class="TAppletApplication">HandleException</method> is called automatically when an exception is not caught by any of the try blocks in the application code. It calls the global ExceptObject function to obtain the exception object. </para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">If ExceptObject is Exception or one of its descendants, <method namespace="CtlPanel" class="TAppletApplication">HandleException</method> generates an <event namespace="ctlpanel" class="tappletapplication">OnException</event> event.</para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">If ExceptObject is not an Exception descendant, or if there is no <event namespace="ctlpanel" class="tappletapplication">OnException</event> event handler, <method namespace="CtlPanel" class="TAppletApplication">HandleException</method> calls the global ShowException method to display a message box that indicates what exception occurred.</para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Sender is the object that raised the exception.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.Initialize">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Sets the initial state of the application and hides any associated MainForm.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <method namespace="CtlPanel" class="TAppletApplication">Initialize</method> follows the standard (default) VCL application initialization process.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.Run">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Sets the Applications Exception handler.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <method namespace="CtlPanel" class="TAppletApplication">Run</method> sets the Application's Exception handler.</para>
+         </comments>
+      </member>
+      <member name="M:CtlPanel.CtlPanel.Destroy">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Disposes of an instance of a <method namespace="CtlPanel" class="TAppletApplication">TAppletApplication</method> object.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Do not call the destructor directly. <method namespace="CtlPanel" class="TAppletApplication">TAppletApplication</method> is destroyed when your application closes.</para>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The destructor frees the memory associated with sub-objects.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.Modules">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Lists the available modules in the Applet application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletApplication">Modules</property> is a list of the <class namespace="ctlpanel">TAppletModule</class> objects that are available to the AppletApplication.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.ModuleCount">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the number of AppletModules available.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletApplication">ModuleCount</property> is the number of AppletModules that are available to the controlling application from this AppletApplication.</para>
+         </comments>
+      </member>
+      <member name="P:CtlPanel.CtlPanel.ControlPanelHandle">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Indicates the window handle for the controlling application.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                     
+               <property namespace="CtlPanel" class="TAppletApplication">ControlPanelHandle</property> is the handle to the Control Panel or the controlling application (the application which invoked the CplApplet function).</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnInit">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the Application is first initialized.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The <event namespace="CtlPanel" class="TAppletApplication">OnInit</event> event occurs when the Application receives a CPL_INIT message from the controlling application. The application must return either true or false to determine whether the controlling application should attempt to continue loading this module. The default is to return true, but this value may be overridden by assigning a value to the AppInitOK parameter of the event handler.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnCount">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the control panel requests a count of the AppletModules.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The <event namespace="CtlPanel" class="TAppletApplication">OnCount</event> event occurs when the Application receives a CPL_GETCOUNT message from the controlling application. It must return the number of AppletModules that are available. The default is to return <property namespace="ctlpanel" class="tappletapplication">ModuleCount</property>, but it may be overridden by changing the value of the AppCount parameter of the event handler.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnException">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when an exception raised by the application is not handled.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Use <event namespace="CtlPanel" class="TAppletApplication">OnException</event> to change the default behavior that occurs when an exception is not handled by application code. If an exception passes through the try blocks in the application code, the application automatically calls the <method namespace="ctlpanel" class="tappletapplication">HandleException</method> method. The <method namespace="ctlpanel" class="tappletapplication">HandleException</method> method generates an <event namespace="CtlPanel" class="TAppletApplication">OnException</event> event when it encounters an exception that descends from Exception. If there is no <event namespace="CtlPanel" class="TAppletApplication">OnException</event> event handler, or if the Exception object does not descend from Exception, the applet displays a message box indicating an error occurred.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnExit">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the Application should unload.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The <event namespace="CtlPanel" class="TAppletApplication">OnExit</event> event occurs when the Application receives a CPL_EXIT message from the controlling application. This is a recommended spot to do non-applet specific clean-up.</para>
+         </comments>
+      </member>
+      <member name="E:CtlPanel.CtlPanel.OnSetup">
+         <summary>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Occurs when the applet is invoked from the command line during system installation.</para>
+         </summary>
+         <comments>
+            <para xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">This event occurs when the CPL_SETUP message is received from the controlling application. This message is only sent when an applet is invoked from the Command line during system installation.</para>
+         </comments>
+      </member>
+   </members>
+</doc>
