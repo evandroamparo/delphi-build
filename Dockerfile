@@ -2,22 +2,22 @@ FROM mcr.microsoft.com/dotnet/framework/runtime:3.5-windowsservercore-ltsc2019 a
 
 ENV BDS=C:\\Delphi
 
-WORKDIR ${BDS}
+ENV FRAMEWORKDIR=C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727
 
-COPY delphi/ .
+COPY delphi/ ${BDS}
 
-COPY delphi/dcc32.cfg ./bin/
+COPY delphi/*.Targets ${FRAMEWORKDIR}/
 
-COPY delphi/*.Targets C:/Windows/Microsoft.NET/Framework/v2.0.50727/
+COPY Geoservicos/ /app/
 
-COPY /hello.dpr /app/
+COPY componentes/LockBox/* /app/lib/
 
-RUN setx path C:\Windows\Microsoft.NET\Framework\v4.0.30319;%BDS%;%path%
+COPY componentes/mxOutlookBar/* /app/lib/
 
-RUN %BDS%\bin\dcc32 \app\hello.dpr
+COPY ["componentes/Quick Report/*", "/app/lib/"]
+
+RUN %FRAMEWORKDIR%\msbuild \app\src\Geoserviços.dproj /target:Build /p:config=Release
 
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
-COPY --from=build /app/hello.exe /app/
-
-CMD /app/hello.exe
+COPY --from=build /app/bin/ /app/
