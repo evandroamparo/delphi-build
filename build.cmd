@@ -1,3 +1,3 @@
 @echo off
 
-docker build -t delphi-build .
+docker build -t evandroamparo/delphi2007-build:latest .

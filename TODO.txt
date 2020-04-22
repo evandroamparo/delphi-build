@@ -1,1 +1,0 @@
-- Separar imagem de build da imagem do projeto

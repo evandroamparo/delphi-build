@@ -4,20 +4,17 @@ ENV BDS=C:\\Delphi
 
 ENV FRAMEWORKDIR=C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727
 
+ENV Win32LibraryPath=${BDS}\\lib;c:\\windows\\system32
+
+RUN setx path "%path%;%FRAMEWORKDIR%"
+
 COPY delphi/ ${BDS}
+
+COPY delphi/dcc32.cfg ${BDS}\\bin
 
 COPY delphi/*.Targets ${FRAMEWORKDIR}/
 
-COPY Geoservicos/ /app/
+COPY componentes/Componentes-Delphi-2007.exe c:/
 
-COPY componentes/LockBox/* /app/lib/
-
-COPY componentes/mxOutlookBar/* /app/lib/
-
-COPY ["componentes/Quick Report/*", "/app/lib/"]
-
-RUN %FRAMEWORKDIR%\msbuild \app\src\Geoserviços.dproj /target:Build /p:config=Release
-
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
-
-COPY --from=build /app/bin/ /app/
+RUN c:\Componentes-Delphi-2007.exe /VERYSILENT /SUPPRESSMSGBOXES /components=lockbox,outlookbar,quickreport4,ibexpress /log=log.txt & \
+    DEL c:\Componentes-Delphi-2007.exe
