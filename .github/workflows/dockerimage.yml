@@ -14,6 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Build the Docker image
       shell: cmd
-      run: build.cmd
+      run: docker build -t evandroamparo/delphi2007-build:latest .
+      
+    - name: Publish the Docker image
+    run: |
+      docker login -u evandroamparo -p ${{ secrets.DOCKER_PASSWORD }}
+      docker push evandroamparo/delphi2007-build:latest .
