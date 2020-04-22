@@ -22,4 +22,4 @@ jobs:
     - name: Publish the Docker image
       run: |
         docker login -u evandroamparo -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push evandroamparo/delphi2007-build:latest .
+        docker push evandroamparo/delphi2007-build:latest
