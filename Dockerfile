@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/framework/runtime:3.5-windowsservercore-ltsc2019 as build
+FROM mcr.microsoft.com/dotnet/framework/runtime:3.5-windowsservercore-2004 as build
 
 ENV BDS=C:\\Delphi
 
