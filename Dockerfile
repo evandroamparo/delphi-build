@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/framework/runtime:3.5-windowsservercore-2004 as build
+FROM mcr.microsoft.com/dotnet/framework/runtime:3.5-windowsservercore-ltsc2019 as build
 
 ENV BDS=C:\\Delphi
 
@@ -18,3 +18,8 @@ COPY componentes/Componentes-Delphi-2007.exe c:/
 
 RUN c:\Componentes-Delphi-2007.exe /VERYSILENT /SUPPRESSMSGBOXES /components=lockbox,outlookbar,quickreport4,ibexpress /log=log.txt & \
     DEL c:\Componentes-Delphi-2007.exe
+
+RUN curl -L -o is.exe https://files.jrsoftware.org/is/6/innosetup-6.0.5.exe \
+    & is.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART \
+    & del is.exe \
+    & setx path "%path%;C:\Program Files (x86)\Inno Setup 6"
