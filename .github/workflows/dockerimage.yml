@@ -22,4 +22,4 @@ jobs:
     - name: Publish the Docker image
       run: |
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u evandroamparo --password-stdin
-        docker push evandroamparo/delphi2007-build:windowsservercore-2004
+        docker push evandroamparo/delphi2007-build:latest
