@@ -1,0 +1,26 @@
+name: Docker Image CI - GitHub Packages
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build the Docker image
+      shell: cmd
+      run: docker build -t evandroamparo/delphi2007-build:latest .
+      
+    - name: Publish the Docker image
+      run: |
+        echo ${{ secrets.GH_TOKEN }} | docker login docker.pkg.github.com -u evandroamparo --password-stdin
+        docker push docker.pkg.github.com/evandroamparo/delphi-build:latest
+        docker push docker.pkg.github.com/evandroamparo/delphi-build/delphi2007-build:latest
