@@ -20,6 +20,6 @@ RUN c:\Componentes-Delphi-2007.exe /VERYSILENT /SUPPRESSMSGBOXES /components=loc
     DEL c:\Componentes-Delphi-2007.exe
 
 RUN curl -L -o is.exe https://files.jrsoftware.org/is/6/innosetup-6.0.5.exe \
-    & is.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART \
-    & del is.exe \
-    & setx path "%path%;C:\Program Files (x86)\Inno Setup 6"
+    && is.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART \
+    && del is.exe \
+    && setx path "%path%;C:\Program Files (x86)\Inno Setup 6"
