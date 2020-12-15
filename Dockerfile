@@ -4,7 +4,7 @@ ENV BDS=C:\\Delphi
 
 ENV FRAMEWORKDIR=C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727
 
-ENV Win32LibraryPath=${BDS}\\lib;c:\\windows\\system32
+ENV Win32LibraryPath=${BDS}\\lib;${BDS}\\lib\\Indy10;c:\\windows\\system32
 
 RUN setx path "%path%;%FRAMEWORKDIR%"
 
